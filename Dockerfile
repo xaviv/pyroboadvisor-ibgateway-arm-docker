@@ -25,16 +25,18 @@ ENV SCREEN_DEPTH=16
 
 WORKDIR /opt
 
-COPY ibgateway.tgz /opt/
-
-RUN tar xzf ibgateway.tgz && rm ibgateway.tgz
+RUN curl -sSOL "https://github.com/xaviv/pyroboadvisor-ibgateway-arm-docker/releases/download/v1039/ibgateway.tgz" && \
+    tar -zxf ibgateway.tgz -C /opt && \
+    rm ibgateway.tgz
 
 RUN useradd -m -s /bin/bash ibgateway
 RUN chown -R ibgateway:ibgateway /opt/Jts
 
-COPY IBCLinux-3.23.0.zip /opt/
-RUN unzip IBCLinux-3.23.0.zip
-
+RUN curl -sSOL "https://github.com/IbcAlpha/IBC/releases/download/3.23.0/IBCLinux-3.23.0.zip" && \
+    mkdir -p /opt/ibc && \
+    unzip IBCLinux-3.23.0.zip -d /opt && \
+    rm IBCLinux-3.23.0.zip
+    
 COPY private/config.ini /opt/config.ini
 # Pendiente actualizar gatewaystart.sh
 COPY private/gatewaystart.sh /opt/gatewaystart.sh
