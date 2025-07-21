@@ -17,10 +17,10 @@ Contenerizar pyroboadvisor (https://pyroboadvisor.com) y sus dependencias, inclu
 - Como base de docker uso ubuntu en arm64. La instalación de IBgateway debe realizarse fuera del contenedor
 - Utilizo un makefile como base para construir, ejecutar el docker y otras tareas de mantenimiento
 - En la carpeta assets hay las plantillas de los archivos de configuración a mover a la carpeta private
+- Creada una rama selfhosting en el repositorio de pyroboadvisor para su ejecución desatendida
 
 ## Pendiente
-- Menu en flask para poder ver estado y poder cambiar parametros
-- Modificar código pyroboadvisor para que pueda ser lanzado desatendido
+- App en flask para poder ver estado, consultar logs y poder cambiar parametros
 - Aligerar el docker, reduciendo componentes innecesarios
 
 ## Referencias útiles
