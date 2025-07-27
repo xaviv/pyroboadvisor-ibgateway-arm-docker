@@ -1,5 +1,11 @@
 #!/bin/bash
 
+printf "fecha_inicio=%s\nmoney=%s\nnumberStocksInPortfolio=%s\norderMarginBuy=%s\norderMarginSell=%s\napalancamiento=%s\nring_size=%s\nrlog_size=%s\ncabeza=%s\nseeds=%s\npercentil=%s\nprediccion=%s\nkey=%s\nemail=%s\nmodo=%s\nhora=%s\npuerto=%s" \
+    "$fecha_inicio" "$money" "$numberStocksInPortfolio" "$orderMarginBuy" "$orderMarginSell" "$apalancamiento" \
+    "$ring_size" "$rlog_size" "$cabeza" "$seeds" "$percentil" "$prediccion" "$key" "$email" "$modo" "$hora" "$puerto" > /home/pyroboadvisor/pyroboadvisor-selfhosting/private/pyroboadvisor.config
+printf "IbLoginId=%s\nIbPassword=%s\nTradingMode=%s\nAcceptNonBrokerageAccountWarning=%s\nReadOnlyApi=%s\nBypassOrderPrecautions=%s\n" \
+    "$IbLoginId" "$IbPassword" "$TradingMode" "$AcceptNonBrokerageAccountWarning" "$ReadOnlyApi" "$BypassOrderPrecautions" > /opt/config.ini
+    
 set -e
 
 Xvfb :0 -screen 0 1024x768x24 -ac +extension GLX +render -noreset &
