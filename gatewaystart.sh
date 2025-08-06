@@ -228,5 +228,5 @@ if [[ "$1" == "-inline" ]]; then
     exec "${IBC_PATH}/scripts/displaybannerandlaunch.sh"
 else
     title="IBC ($APP $TWS_MAJOR_VRSN)"
-    xterm $iconic -T "$title" -e "${IBC_PATH}/scripts/displaybannerandlaunch.sh" &
+    xterm $iconic -T "$title" -e "${IBC_PATH}/scripts/displaybannerandlaunch.sh > /var/log/ibgateway.log 2>&1" &
 fi

@@ -25,5 +25,5 @@ export INSTALL4J_JAVA_HOME="${JAVA_HOME}"
 export app_java_home="${JAVA_HOME}" 
 
 cd /opt
-/opt/gatewaystart.sh > /var/log/ibgateway.log 2>&1 &
-xterm -hold -e "/usr/bin/python3 /home/pyroboadvisor/pyroboadvisor-selfhosting/sample.py" 
+/opt/gatewaystart.sh &
+xterm -hold -e "/usr/bin/python3 /home/pyroboadvisor/pyroboadvisor-selfhosting/sample.py > /var/log/pyroboadvisor.log 2>&1"
