@@ -1,6 +1,8 @@
 services:
   pyroboadvisor:
     image: ghcr.io/xaviv/pyroboadvisor-arm-docker:latest
+    ports:
+      - "6800:6800"
     environment:
       - IbLoginId=
       - IbPassword=
@@ -25,3 +27,4 @@ services:
       - modo=3
       - hora=10:00
       - puerto=4001
+      - enable_novnc=1

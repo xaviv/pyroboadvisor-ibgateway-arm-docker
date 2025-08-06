@@ -24,6 +24,7 @@ ENV email=
 ENV modo=3
 ENV hora=10:00
 ENV puerto=4001
+ENV enable_novnc=1
 
 ENV JAVA_HOME=/opt/java
 ENV PATH="$JAVA_HOME/bin:$PATH"

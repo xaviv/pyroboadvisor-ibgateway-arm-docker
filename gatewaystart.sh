@@ -21,7 +21,7 @@
 TWS_MAJOR_VRSN=1039
 IBC_INI=/opt/config.ini
 TRADING_MODE=
-TWOFA_TIMEOUT_ACTION=exit
+TWOFA_TIMEOUT_ACTION=restart
 IBC_PATH=/opt/
 TWS_PATH=/opt/Jts/
 TWS_SETTINGS_PATH=
@@ -229,4 +229,5 @@ if [[ "$1" == "-inline" ]]; then
 else
     title="IBC ($APP $TWS_MAJOR_VRSN)"
     xterm $iconic -T "$title" -e "${IBC_PATH}/scripts/displaybannerandlaunch.sh > /var/log/ibgateway.log 2>&1" &
+	echo $! > /var/run/ibgateway.pid
 fi
