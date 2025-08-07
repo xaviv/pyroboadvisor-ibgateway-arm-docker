@@ -9,8 +9,22 @@ printf "IbLoginId=%s\nIbPassword=%s\nTradingMode=%s\nAcceptNonBrokerageAccountWa
 set -e
 
 Xvfb :0 -screen 0 1024x768x24 -ac +extension GLX +render -noreset &
+XVFB_PID=$!
 export DISPLAY=:0
-sleep 3
+for i in {1..30}; do
+    if xdpyinfo -display :0 > /dev/null 2>&1; then
+        echo "Xvfb arrancado correctamente (PID $XVFB_PID)"
+        break
+    else
+        echo "Esperando a Xvfb..."
+        sleep 1
+    fi
+done
+
+if ! xdpyinfo -display :0 > /dev/null 2>&1; then
+    echo "Xvfb no ha arrancado correctamente. Parando docker."
+    exit 1
+fi
 
 fluxbox &
 sleep 2
