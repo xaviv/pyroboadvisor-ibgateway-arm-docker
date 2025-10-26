@@ -1,9 +1,10 @@
 #!/bin/bash
 
 # Crear los archivos de configuracion para pyroboadvisor e IB Gateway usando las variables de entorno
-printf "fecha_inicio=%s\nmoney=%s\nnumberStocksInPortfolio=%s\norderMarginBuy=%s\norderMarginSell=%s\napalancamiento=%s\nring_size=%s\nrlog_size=%s\ncabeza=%s\nseeds=%s\npercentil=%s\nprediccion=%s\nkey=%s\nemail=%s\nmodo=%s\nhora=%s\npuerto=%s" \
+printf "fecha_inicio=%s\nmoney=%s\nnumberStocksInPortfolio=%s\norderMarginBuy=%s\norderMarginSell=%s\napalancamiento=%s\nring_size=%s\nrlog_size=%s\ncabeza=%s\nseeds=%s\npercentil=%s\nprediccion=%s\nkey=%s\nemail=%s\nmodo=%s\nhora=%s\npuerto=%s\nsource=%s\nhar=%s\nhretorno=%s\nhrandom=%s\nmultiploMantenimiento=%s\nb=%s\neodhd_key=%s\npoligon_key=%s" \
     "$fecha_inicio" "$money" "$numberStocksInPortfolio" "$orderMarginBuy" "$orderMarginSell" "$apalancamiento" \
-    "$ring_size" "$rlog_size" "$cabeza" "$seeds" "$percentil" "$prediccion" "$key" "$email" "$modo" "$hora" "$puerto" > /home/pyroboadvisor/pyroboadvisor-selfhosting/private/pyroboadvisor.config
+    "$ring_size" "$rlog_size" "$cabeza" "$seeds" "$percentil" "$prediccion" "$key" "$email" "$modo" "$hora" "$puerto" \
+    "$source" "$har" "$hretorno" "$hrandom" "$multiploMantenimiento" "$b" "$eodhd_key" "$poligon_key" > /home/pyroboadvisor/pyroboadvisor-selfhosting/private/pyroboadvisor.config
 printf "IbLoginId=%s\nIbPassword=%s\nTradingMode=%s\nAcceptNonBrokerageAccountWarning=%s\nReadOnlyApi=%s\nReadOnlyLogin=%s\nBypassOrderPrecautions=%s\nReloginAfterSecondFactorAuthenticationTimeout=yes\n" \
     "$IbLoginId" "$IbPassword" "$TradingMode" "$AcceptNonBrokerageAccountWarning" "$ReadOnlyApi" "$ReadOnlyApi" "$BypassOrderPrecautions" > /opt/config.ini
 
@@ -66,7 +67,7 @@ kill_ibgateway() {
 }
 
 # Arrancar pyroboadvisor
-/usr/bin/python3 /home/pyroboadvisor/pyroboadvisor-selfhosting/sample.py 2>&1 | tee -a /var/log/pyroboadvisor.log
+/usr/bin/python3 /home/pyroboadvisor/pyroboadvisor-selfhosting/sample_b.py 2>&1 | tee -a /var/log/pyroboadvisor.log
 PYTHON_EXIT_CODE=$?
 echo "Pyroboadvisor sale con: $PYTHON_EXIT_CODE" >> /var/log/pyroboadvisor.log
 kill_ibgateway
