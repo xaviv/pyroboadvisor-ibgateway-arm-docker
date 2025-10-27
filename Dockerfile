@@ -32,6 +32,9 @@ ENV multiploMantenimiento=6
 ENV b=true
 ENV eodhd_key=
 ENV polygon_key=
+ENV email_remitente=
+ENV email_destino=
+ENV email_app_password=
 
 ENV JAVA_HOME=/opt/java
 ENV PATH="$JAVA_HOME/bin:$PATH"
