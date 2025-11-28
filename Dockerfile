@@ -47,7 +47,7 @@ ENV SCREEN_DEPTH=16
 ENV JDK_VERSION="bellsoft-jdk17.0.16+12-linux-aarch64-full.tar.gz"
 ENV JDK_URL="https://download.bell-sw.com/java/17.0.16+12/${JDK_VERSION}"
 ENV PYROBOADVISOR_URL="https://github.com/daradija/pyroboadvisor/archive/refs/heads/selfhosting.zip"
-ENV PYROBOADVISOR_SHA256="6472a97d8d73842e1c3708b6ac26adc16ad0e9524c106c64435bf6f7c6e02c85"
+ENV PYROBOADVISOR_SHA256="bba90bf72f03bf6edad9b4a567c1e52dcee1c2c5bbee0976bb2cdd346ca08f19"
 ENV IB_GATEWAY_URL="https://github.com/xaviv/pyroboadvisor-ibgateway-arm-docker/releases/download/v1039/ibgateway.tgz"
 ENV IBC_URL="https://github.com/IbcAlpha/IBC/releases/download/3.23.0/IBCLinux-3.23.0.zip"
 
