@@ -35,4 +35,11 @@ services:
       - b=true
       - eodhd_key=
       - polygon_key=
+      - email_remitente=
+      - email_destino=
+      - email_app_password=
+      - telegram_apikey=
+      - telegram_channelid=
+      - discord_webhook=
+
 

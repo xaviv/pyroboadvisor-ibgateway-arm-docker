@@ -5,7 +5,8 @@ printf "fecha_inicio=%s\nmoney=%s\nnumberStocksInPortfolio=%s\norderMarginBuy=%s
     "$fecha_inicio" "$money" "$numberStocksInPortfolio" "$orderMarginBuy" "$orderMarginSell" "$apalancamiento" \
     "$ring_size" "$rlog_size" "$cabeza" "$seeds" "$percentil" "$prediccion" "$key" "$email" "$modo" "$hora" "$puerto" \
     "$source" "$har" "$hretorno" "$hrandom" "$multiploMantenimiento" "$b" "$eodhd_key" "$poligon_key" \
-    "$email_remitente" "$email_destino" "$email_app_password" > /home/pyroboadvisor/pyroboadvisor-selfhosting/private/pyroboadvisor.config
+    "$email_remitente" "$email_destino" "$email_app_password" \
+    "$telegram_apikey" "$telegram_channelid" "$discord_webhook" > /home/pyroboadvisor/pyroboadvisor-selfhosting/private/pyroboadvisor.config
 printf "IbLoginId=%s\nIbPassword=%s\nTradingMode=%s\nAcceptNonBrokerageAccountWarning=%s\nReadOnlyApi=%s\nReadOnlyLogin=%s\nBypassOrderPrecautions=%s\nReloginAfterSecondFactorAuthenticationTimeout=yes\n" \
     "$IbLoginId" "$IbPassword" "$TradingMode" "$AcceptNonBrokerageAccountWarning" "$ReadOnlyApi" "$ReadOnlyApi" "$BypassOrderPrecautions" > /opt/config.ini
 
