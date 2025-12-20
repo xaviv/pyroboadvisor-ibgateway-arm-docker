@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Crear los archivos de configuracion para pyroboadvisor e IB Gateway usando las variables de entorno
-printf "fecha_inicio=%s\nmoney=%s\nnumberStocksInPortfolio=%s\norderMarginBuy=%s\norderMarginSell=%s\napalancamiento=%s\nring_size=%s\nrlog_size=%s\ncabeza=%s\nseeds=%s\npercentil=%s\nprediccion=%s\nkey=%s\nemail=%s\nmodo=%s\nhora=%s\npuerto=%s\nsource=%s\nhar=%s\nhretorno=%s\nhrandom=%s\nmultiploMantenimiento=%s\nb=%s\neodhd_key=%s\npoligon_key=%s\nemail_remitente=%s\nemail_destino=%s\nemail_app_password=%s" \
+printf "fecha_inicio=%s\nmoney=%s\nnumberStocksInPortfolio=%s\norderMarginBuy=%s\norderMarginSell=%s\napalancamiento=%s\nring_size=%s\nrlog_size=%s\ncabeza=%s\nseeds=%s\npercentil=%s\nprediccion=%s\nkey=%s\nemail=%s\nmodo=%s\nhora=%s\npuerto=%s\nsource=%s\nhar=%s\nhretorno=%s\nhrandom=%s\nmultiploMantenimiento=%s\nb=%s\neodhd_key=%s\npoligon_key=%s\nemail_remitente=%s\nemail_destino=%s\nemail_app_password=%s\ntelegram_apikey=%s\ntelegram_channelid=%s\ndiscord_webhook=%s" \
     "$fecha_inicio" "$money" "$numberStocksInPortfolio" "$orderMarginBuy" "$orderMarginSell" "$apalancamiento" \
     "$ring_size" "$rlog_size" "$cabeza" "$seeds" "$percentil" "$prediccion" "$key" "$email" "$modo" "$hora" "$puerto" \
     "$source" "$har" "$hretorno" "$hrandom" "$multiploMantenimiento" "$b" "$eodhd_key" "$poligon_key" \
