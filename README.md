@@ -10,7 +10,7 @@ Contenerizar pyroboadvisor (https://pyroboadvisor.com) y sus dependencias, inclu
 - A diferencia de otros dockers con el software de IBKR, la API no se expone fuera del docker y será utilizada internamente
 
 ## Instrucciones de uso
-- Crea el docker compose file en YAML en el NAS (ver instrucciones en ![instrucciones openmediavault](openmediavault.md))
+- Crea el docker compose file en YAML en el NAS (ver instrucciones en [instrucciones openmediavault](openmediavault.md))
 - Arranca manualmente el docker o mediante una tarea programada
 - Al arrancar recibirás una solicitud de autorización en el móvil donde hayas configurado el 2FA de IBKR
 - En el docker hay novnc (opcional), con lo que puedes conectarte al puerto 6800 usando el navegador para poder interactuar con el sistema y con IBgateway
@@ -24,8 +24,9 @@ Contenerizar pyroboadvisor (https://pyroboadvisor.com) y sus dependencias, inclu
 - Como base de docker uso ubuntu en arm64. Se instala IBgateway y JDK dentro del mismo contenedor
 - Utilizo un makefile como base para construir, ejecutar el docker y otras tareas de mantenimiento
 - En la carpeta assets hay las plantillas de los archivos de configuración a mover a la carpeta private
-- Creada una rama selfhosting en el repositorio de pyroboadvisor para su ejecución desatendida
+- Creada una [rama selfhosting](https://github.com/daradija/pyroboadvisor/tree/selfhosting) en el repositorio de pyroboadvisor para su ejecución desatendida
 - Activado reinicio automático del ibgateway en caso de saltar el timeout de autenticación
+- Incorporada [integración con bitwarden client](https://github.com/daradija/pyroboadvisor/blob/selfhosting/vault/readme.md)
 
 ## Referencias útiles
 

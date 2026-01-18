@@ -41,5 +41,9 @@ services:
       - telegram_apikey=
       - telegram_channelid=
       - discord_webhook=
+      - bitwarden_url=
+    volumes:
+      - /opt/secrets/bw_clientid:/run/secrets/bw_clientid:ro
+      - /opt/secrets/bw_clientsecret:/run/secrets/bw_clientsecret:ro
 
 

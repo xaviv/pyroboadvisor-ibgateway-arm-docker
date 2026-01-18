@@ -50,7 +50,7 @@ ENV SCREEN_DEPTH=16
 ENV JDK_VERSION="bellsoft-jdk17.0.16+12-linux-aarch64-full.tar.gz"
 ENV JDK_URL="https://download.bell-sw.com/java/17.0.16+12/${JDK_VERSION}"
 ENV PYROBOADVISOR_URL="https://github.com/daradija/pyroboadvisor/archive/refs/heads/selfhosting.zip"
-ENV PYROBOADVISOR_SHA256="fcd23432659e7bccd277bfd9025155e1fea647e0f5e218ce93b74a4d1f646a4f"
+ENV PYROBOADVISOR_SHA256="871e6c8f8a96a38fa606ee014c133dc14ebd0c59df2d0cba8a3e353f0e588de9"
 ENV IB_GATEWAY_URL="https://github.com/xaviv/pyroboadvisor-ibgateway-arm-docker/releases/download/v1039/ibgateway.tgz"
 ENV IBC_URL="https://github.com/IbcAlpha/IBC/releases/download/3.23.0/IBCLinux-3.23.0.zip"
 
@@ -105,7 +105,8 @@ RUN pip install --no-cache-dir multitasking
 
 RUN pip-compile --verbose --no-upgrade /home/pyroboadvisor/pyroboadvisor-selfhosting/requirements.txt --output-file /tmp/compiled.txt && \
     pip install --no-cache-dir -r /home/pyroboadvisor/pyroboadvisor-selfhosting/requirements.txt && \
-    pip install --no-cache-dir -r /home/pyroboadvisor/pyroboadvisor-selfhosting/driver/requirements.txt 
+    pip install --no-cache-dir -r /home/pyroboadvisor/pyroboadvisor-selfhosting/driver/requirements.txt && \
+    pip install --no-cache-dir -r /home/pyroboadvisor/pyroboadvisor-selfhosting/vault/requirements.txt
 
 #COPY private/pyroboadvisor.config /home/pyroboadvisor/pyroboadvisor-selfhosting/private/pyroboadvisor.config
 RUN chown -R pyroboadvisor:pyroboadvisor /home/pyroboadvisor/pyroboadvisor-selfhosting/private
@@ -115,6 +116,7 @@ RUN chown -R pyroboadvisor:pyroboadvisor /home/pyroboadvisor/pyroboadvisor-selfh
 
 COPY gatewaystart.sh /opt/gatewaystart.sh
 COPY arranca.sh /home/pyroboadvisor/arranca.sh
+COPY prepara_con_bitwarden.py /home/pyroboadvisor/pyroboadvisor-selfhosting/prepara_con_bitwarden.py
 RUN chown -R pyroboadvisor:pyroboadvisor /home/pyroboadvisor/arranca.sh
 RUN chmod a+x *.sh scripts/*.sh
 
