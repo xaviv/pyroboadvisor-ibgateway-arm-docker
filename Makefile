@@ -7,6 +7,7 @@ clean:
 	docker image rm -f $(IMAGE_NAME):latest
 
 build:
+	./checksum_pyroboadvisor.sh
 	docker build --platform linux/arm64 --tag $(IMAGE_NAME):latest .
 
 debug: build
