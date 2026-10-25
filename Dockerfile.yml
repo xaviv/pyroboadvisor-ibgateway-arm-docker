@@ -42,6 +42,8 @@ services:
       - telegram_channelid=
       - discord_webhook=
       - bitwarden_url=
+      - flex_token=
+      - flex_query=
     volumes:
       - /opt/secrets/bw_clientid:/run/secrets/bw_clientid:ro
       - /opt/secrets/bw_clientsecret:/run/secrets/bw_clientsecret:ro
